@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d18">
+    <meta name="description" content="Generate strong, secure random passwords with customizable character options.">
+    <title>SecureKey | Smart Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <div class="logo" aria-hidden="true">🔐</div>
+            <div>
+                <h1>Secure<span>Key</span></h1>
+                <p>Smart Password Generator</p>
+            </div>
+        </header>
+        <section class="generator-card">
+            <div class="card-heading">
+                <div>
+                    <p class="eyebrow">PASSWORD GENERATOR</p>
+                    <h2>Create a strong password</h2>
+                    <p class="description">
+                        Generate secure passwords to protect your digital life.
+                    </p>
+                </div>
+                <span class="security-badge">
+                    <span class="status-dot"></span>
+                    Secure
+                </span>
+            </div>
+            <div class="password-box">
+                <div class="password-content">
+                    <label for="password">YOUR PASSWORD</label>
+                    <input
+                        type="text"
+                        id="password"
+                        placeholder="Generate a password..."
+                        readonly
+                        spellcheck="false"
+                        autocomplete="off"
+                        aria-label="Generated password"
+                    >
+                </div>
+                <button
+                    type="button"
+                    id="copy-btn"
+                    class="copy-btn"
+                    aria-label="Copy password"
+                    title="Copy password"
+                >Copy</button>
+            </div>
+            <div class="strength-section">
+                <div class="strength-header">
+                    <span>Password strength</span>
+                    <span id="strength-text">Not generated</span>
+                </div>
+                <div
+                    class="strength-track"
+                    id="strength-track"
+                    role="progressbar"
+                    aria-label="Password strength"
+                    aria-valuemin="0"
+                    aria-valuemax="4"
+                    aria-valuenow="0"
+                >
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                </div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="settings-heading">
+                <h3>Password settings</h3>
+                <span>Customize your password</span>
+            </div>
+            <div class="length-setting">
+                <div class="length-header">
+                    <label for="length">Password length</label>
+                    <output id="length-value" for="length">16</output>
+                </div>
+                <input
+                    type="range"
+                    id="length"
+                    min="8"
+                    max="64"
+                    value="16"
+                    aria-label="Password length"
+                >
+                <div class="range-labels">
+                    <span>8 characters</span>
+                    <span>64 characters</span>
+                </div>
+            </div>
+            <div class="character-settings">
+                <label class="option-row" for="uppercase">
+                    <span class="option-icon">Aa</span>
+                    <span class="option-description">
+                        <strong>Uppercase letters</strong>
+                        <small>A, B, C, D...</small>
+                    </span>
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="custom-toggle"></span>
+                </label>
+                <label class="option-row" for="lowercase">
+                    <span class="option-icon">ab</span>
+                    <span class="option-description">
+                        <strong>Lowercase letters</strong>
+                        <small>a, b, c, d...</small>
+                    </span>
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="custom-toggle"></span>
+                </label>
+                <label class="option-row" for="numbers">
+                    <span class="option-icon">123</span>
+                    <span class="option-description">
+                        <strong>Numbers</strong>
+                        <small>0, 1, 2, 3...</small>
+                    </span>
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="custom-toggle"></span>
+                </label>
+                <label class="option-row" for="symbols">
+                    <span class="option-icon">#!</span>
+                    <span class="option-description">
+                        <strong>Special symbols</strong>
+                        <small>!, @, #, $, %...</small>
+                    </span>
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="custom-toggle"></span>
+                </label>
+            </div>
+            <button type="button" id="generate-btn" class="generate-btn">
+                <span aria-hidden="true">✦</span>
+                Generate Password
+            </button>
+            <p class="privacy-note">
+                <span aria-hidden="true">✓</span>
+                Generated locally in your browser. No password is sent to a server.
+            </p>
+        </section>
+        <footer class="app-footer">
+            <p>SECUREKEY <span>•</span> BUILT FOR DIGITAL SECURITY</p>
+        </footer>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
